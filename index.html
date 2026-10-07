@@ -6,6 +6,7 @@
 <title>文档合并拆分</title>
 <style>
 :root {
+  --fs: .93;
   --bg: #f4f4f5;
   --panel: #ffffff;
   --text: #18181b;
@@ -53,7 +54,7 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0; background: var(--bg); color: var(--text);
-  font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font: calc(14px * var(--fs))/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 body.layer-open { overflow: hidden; }
@@ -62,14 +63,14 @@ svg.i { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor;
 svg.i.lg { width: 30px; height: 30px; stroke-width: 1.5; }
 .hidden { display: none !important; }
 .muted { color: var(--muted); }
-.small { font-size: 12px; }
+.small { font-size: calc(12px * var(--fs)); }
 .spacer { flex: 1; }
 .err-text { color: var(--danger); }
 
 /* ---------- 按钮 ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  font-size: 14px; padding: 8px 14px; border-radius: 10px; cursor: pointer; min-height: 38px;
+  font-size: calc(14px * var(--fs)); padding: 8px 14px; border-radius: 10px; cursor: pointer; min-height: 38px;
   border: 1px solid var(--border); background: var(--panel); color: var(--text); white-space: nowrap;
 }
 .btn:hover { background: var(--hover); }
@@ -85,7 +86,7 @@ svg.i.lg { width: 30px; height: 30px; stroke-width: 1.5; }
 .iconbtn:hover { background: var(--hover); }
 .iconbtn:active { background: var(--press); }
 .iconbtn svg.i { width: 22px; height: 22px; }
-.textbtn { border: 0; background: none; color: var(--text); font-weight: 600; font-size: 14px; padding: 6px 10px; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+.textbtn { border: 0; background: none; color: var(--text); font-weight: 600; font-size: calc(14px * var(--fs)); padding: 6px 10px; border-radius: 8px; cursor: pointer; white-space: nowrap; }
 .textbtn:hover { background: var(--hover); }
 .textbtn:disabled { opacity: .4; }
 
@@ -95,8 +96,8 @@ svg.i.lg { width: 30px; height: 30px; stroke-width: 1.5; }
 .brand { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
 .logo { width: 38px; height: 38px; border-radius: 10px; background: var(--primary); color: var(--primary-text); display: flex; align-items: center; justify-content: center; flex: none; }
 .logo svg.i { width: 21px; height: 21px; }
-.appbar h1 { margin: 0; font-size: 19px; line-height: 1.2; }
-.appbar .desc { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.appbar h1 { margin: 0; font-size: calc(19px * var(--fs)); line-height: 1.2; }
+.appbar .desc { margin: 2px 0 0; color: var(--muted); font-size: calc(13px * var(--fs)); }
 .appbar .page-name { display: none; }
 .appbar-actions { display: flex; gap: 2px; }
 .tabbar { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
@@ -106,18 +107,18 @@ svg.i.lg { width: 30px; height: 30px; stroke-width: 1.5; }
 }
 .tab:hover { color: var(--text); }
 .tab.active { color: var(--text); border-bottom-color: var(--text); }
-.badge { min-width: 18px; padding: 0 6px; border-radius: 9px; background: var(--chip); color: var(--muted); font-size: 11px; line-height: 18px; text-align: center; font-weight: 600; }
+.badge { min-width: 18px; padding: 0 6px; border-radius: 9px; background: var(--chip); color: var(--muted); font-size: calc(11px * var(--fs)); line-height: 18px; text-align: center; font-weight: 600; }
 .badge:empty { display: none; }
 
 /* ---------- 列表（像聊天列表） ---------- */
-.list-head { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 4px 4px 6px; color: var(--muted); font-size: 13px; flex-wrap: wrap; }
+.list-head { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 4px 4px 6px; color: var(--muted); font-size: calc(13px * var(--fs)); flex-wrap: wrap; }
 .list { list-style: none; margin: 0; padding: 0; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
 .list:empty { display: none; }
 .row { position: relative; overflow: hidden; }
 .row + .row .row-front::before { content: ""; position: absolute; top: 0; left: 66px; right: 0; border-top: 1px solid var(--border); }
 .row-back { position: absolute; top: 0; bottom: 0; right: 0; display: flex; visibility: hidden; }
 .row.swiped .row-back { visibility: visible; }
-.row-back button { border: 0; color: #fff; font-size: 14px; width: 74px; cursor: pointer; }
+.row-back button { border: 0; color: #fff; font-size: calc(14px * var(--fs)); width: 74px; cursor: pointer; }
 .row-back .gray { background: var(--swipe-gray); }
 .row-back .dark { background: var(--swipe-dark); }
 .row-back .red { background: var(--swipe-red); }
@@ -132,16 +133,16 @@ svg.i.lg { width: 30px; height: 30px; stroke-width: 1.5; }
 @media (hover: hover) and (pointer: fine) { .row-front:hover { background: var(--hover); } }
 .avatar {
   width: 42px; height: 42px; border-radius: 10px; flex: none; display: flex; align-items: center; justify-content: center;
-  font-size: 10.5px; font-weight: 700; letter-spacing: .3px; background: var(--chip); color: var(--muted); border: 1px solid var(--border);
+  font-size: calc(10.5px * var(--fs)); font-weight: 700; letter-spacing: .3px; background: var(--chip); color: var(--muted); border: 1px solid var(--border);
 }
 .avatar.docx, .avatar.merge { background: var(--chip-strong); color: var(--chip-strong-text); border-color: var(--chip-strong); }
 .avatar.err { color: var(--danger); border-color: currentColor; background: transparent; }
 .avatar svg.i { width: 20px; height: 20px; }
 .row-main { flex: 1; min-width: 0; }
-.row-title { font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.row-sub { font-size: 13px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 1px; }
+.row-title { font-size: calc(15px * var(--fs)); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row-sub { font-size: calc(13px * var(--fs)); color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 1px; }
 .row-sub:empty { display: none; }
-.row-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-size: 12px; color: var(--faint); flex: none; align-self: flex-start; padding-top: 2px; }
+.row-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-size: calc(12px * var(--fs)); color: var(--faint); flex: none; align-self: flex-start; padding-top: 2px; }
 .row-hover { display: none; gap: 2px; flex: none; }
 .row-hover .iconbtn { width: 34px; height: 34px; color: var(--muted); }
 .row-hover .iconbtn svg.i { width: 18px; height: 18px; }
@@ -160,37 +161,37 @@ svg.i.lg { width: 30px; height: 30px; stroke-width: 1.5; }
 mark { background: var(--chip-strong); color: var(--chip-strong-text); border-radius: 3px; padding: 0 2px; }
 
 .chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-.chip { border: 1px solid var(--border); background: var(--panel); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--text); cursor: pointer; }
+.chip { border: 1px solid var(--border); background: var(--panel); border-radius: 999px; padding: 4px 12px; font-size: calc(13px * var(--fs)); color: var(--text); cursor: pointer; }
 .chip:hover { background: var(--hover); }
 .chip.on { background: var(--primary); color: var(--primary-text); border-color: var(--primary); }
 
 /* ---------- 空状态 / 拖入 ---------- */
 .empty-state { text-align: center; padding: 44px 16px 36px; color: var(--muted); background: var(--panel); border: 1.5px dashed var(--border); border-radius: 14px; }
 .empty-state .big { width: 64px; height: 64px; border-radius: 18px; background: var(--chip); color: var(--muted); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
-.empty-state h3 { margin: 0 0 4px; color: var(--text); font-size: 16px; }
-.empty-state p { margin: 0 0 18px; font-size: 13px; }
+.empty-state h3 { margin: 0 0 4px; color: var(--text); font-size: calc(16px * var(--fs)); }
+.empty-state p { margin: 0 0 18px; font-size: calc(13px * var(--fs)); }
 .empty-state .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .empty-state .actions .btn { min-width: 128px; }
 .empty-plain { text-align: center; color: var(--faint); padding: 36px 0; }
 .drop-overlay { position: fixed; inset: 0; z-index: 80; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.35); pointer-events: none; }
-.drop-overlay div { background: var(--panel); border: 2px dashed var(--text); border-radius: 16px; padding: 28px 40px; font-size: 16px; font-weight: 600; display: flex; gap: 10px; align-items: center; }
+.drop-overlay div { background: var(--panel); border: 2px dashed var(--text); border-radius: 16px; padding: 28px 40px; font-size: calc(16px * var(--fs)); font-weight: 600; display: flex; gap: 10px; align-items: center; }
 body.dragging-files .drop-overlay { display: flex; }
 
 /* ---------- 搜索 ---------- */
 .searchbar { position: relative; display: flex; align-items: center; margin-bottom: 10px; }
 .searchbar svg.i { position: absolute; left: 11px; color: var(--faint); pointer-events: none; }
-.searchbar input { width: 100%; height: 40px; border: 0; border-radius: 10px; background: var(--chip); color: var(--text); padding: 0 12px 0 36px; font: inherit; font-size: 15px; }
+.searchbar input { width: 100%; height: 40px; border: 0; border-radius: 10px; background: var(--chip); color: var(--text); padding: 0 12px 0 36px; font: inherit; font-size: calc(15px * var(--fs)); }
 .searchbar input:focus { outline: 2px solid var(--border); }
-.foot-info { text-align: center; color: var(--faint); font-size: 12px; padding: 14px 0; }
+.foot-info { text-align: center; color: var(--faint); font-size: calc(12px * var(--fs)); padding: 14px 0; }
 
 /* ---------- 底部合并栏（像聊天输入框） ---------- */
 .composer {
   position: sticky; bottom: 14px; margin-top: 14px; z-index: 20; display: flex; gap: 8px; align-items: center;
   padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--pop-shadow);
 }
-.composer input { flex: 1; min-width: 0; height: 40px; border: 0; border-radius: 10px; background: var(--chip); color: var(--text); padding: 0 12px; font: inherit; font-size: 15px; }
+.composer input { flex: 1; min-width: 0; height: 40px; border: 0; border-radius: 10px; background: var(--chip); color: var(--text); padding: 0 12px; font: inherit; font-size: calc(15px * var(--fs)); }
 .composer input:focus { outline: 2px solid var(--border); }
-.fmt-chip { height: 40px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); font-size: 12px; font-weight: 700; letter-spacing: .4px; cursor: pointer; color: var(--muted); flex: none; }
+.fmt-chip { height: 40px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); font-size: calc(12px * var(--fs)); font-weight: 700; letter-spacing: .4px; cursor: pointer; color: var(--muted); flex: none; }
 .sendbtn { height: 40px; padding: 0 16px; border-radius: 10px; border: 0; background: var(--primary); color: var(--primary-text); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; flex: none; }
 .sendbtn:disabled { opacity: .35; cursor: not-allowed; }
 
@@ -199,7 +200,7 @@ body.dragging-files .drop-overlay { display: flex; }
 .menu-bg { background: transparent; animation: none; padding: 0; display: block; }
 .page { width: 100%; max-width: 760px; height: min(880px, 90vh); background: var(--bg); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: var(--pop-shadow); }
 .page-bar { flex: none; display: flex; align-items: center; gap: 4px; height: 54px; padding: 0 6px; background: var(--panel); border-bottom: 1px solid var(--border); }
-.page-bar h2 { flex: 1; min-width: 0; margin: 0; text-align: center; font-size: 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page-bar h2 { flex: 1; min-width: 0; margin: 0; text-align: center; font-size: calc(16px * var(--fs)); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bar-l, .bar-r { min-width: 80px; display: flex; align-items: center; }
 .bar-r { justify-content: flex-end; }
 .page-body { flex: 1; overflow: auto; padding: 14px; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
@@ -208,15 +209,15 @@ body.dragging-files .drop-overlay { display: flex; }
 .page-foot .btn { flex: 1; min-height: 44px; }
 .sheet-bg { align-items: center; }
 .sheet { width: 100%; max-width: 400px; background: var(--panel); border-radius: 16px; padding: 6px; box-shadow: var(--pop-shadow); }
-.sheet-title { padding: 10px 14px 8px; font-size: 13px; color: var(--muted); text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.sheet-item { display: flex; align-items: center; gap: 12px; width: 100%; border: 0; background: none; font-size: 16px; padding: 13px 16px; border-radius: 10px; cursor: pointer; text-align: left; }
+.sheet-title { padding: 10px 14px 8px; font-size: calc(13px * var(--fs)); color: var(--muted); text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sheet-item { display: flex; align-items: center; gap: 12px; width: 100%; border: 0; background: none; font-size: calc(16px * var(--fs)); padding: 13px 16px; border-radius: 10px; cursor: pointer; text-align: left; }
 .sheet-item:hover, .sheet-item:active { background: var(--hover); }
-.sheet-item .hint { margin-left: auto; color: var(--faint); font-size: 13px; }
+.sheet-item .hint { margin-left: auto; color: var(--faint); font-size: calc(13px * var(--fs)); }
 .sheet-item.danger { color: var(--danger); }
 .sheet-item:disabled { opacity: .35; }
 .sheet-item.cancel { justify-content: center; color: var(--muted); border-top: 6px solid var(--bg); border-radius: 0; margin-top: 4px; }
 .menu { position: fixed; min-width: 176px; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 5px; box-shadow: var(--pop-shadow); animation: pop .12s ease-out; }
-.menu-item { display: flex; align-items: center; gap: 10px; width: 100%; border: 0; background: none; font-size: 15px; padding: 10px 12px; border-radius: 8px; cursor: pointer; text-align: left; white-space: nowrap; }
+.menu-item { display: flex; align-items: center; gap: 10px; width: 100%; border: 0; background: none; font-size: calc(15px * var(--fs)); padding: 10px 12px; border-radius: 8px; cursor: pointer; text-align: left; white-space: nowrap; }
 .menu-item:hover, .menu-item:active { background: var(--hover); }
 .menu-item.danger { color: var(--danger); }
 .menu-item:disabled { opacity: .35; }
@@ -227,46 +228,64 @@ body.dragging-files .drop-overlay { display: flex; }
 @keyframes up { from { transform: translateY(40%); } }
 
 /* ---------- 设置（分组单元格） ---------- */
-.group-title { font-size: 12px; color: var(--muted); padding: 14px 6px 6px; }
+.group-title { font-size: calc(12px * var(--fs)); color: var(--muted); padding: 14px 6px 6px; }
 .group { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
 .cell { display: flex; align-items: center; gap: 10px; padding: 12px 14px; min-height: 50px; }
 .cell + .cell { border-top: 1px solid var(--border); }
-.cell .label { flex: 1; font-size: 15px; }
+.cell .label { flex: 1; font-size: calc(15px * var(--fs)); }
 .cell.col { flex-direction: column; align-items: stretch; }
-.cell textarea { width: 100%; font: inherit; font-size: 14px; padding: 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); resize: vertical; min-height: 80px; }
+.cell textarea { width: 100%; font: inherit; font-size: calc(14px * var(--fs)); padding: 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); resize: vertical; min-height: 80px; }
 .group .sheet-item { border-radius: 0; margin: 0; }
-.group-note { font-size: 12px; color: var(--muted); padding: 8px 6px 0; }
+.group-note { font-size: calc(12px * var(--fs)); color: var(--muted); padding: 8px 6px 0; }
 .switch { appearance: none; -webkit-appearance: none; width: 46px; height: 28px; border-radius: 14px; background: var(--border); position: relative; cursor: pointer; transition: background .15s; flex: none; margin: 0; }
 .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .15s; }
 .switch:checked { background: var(--primary); }
 .switch:checked::after { transform: translateX(18px); background: var(--primary-text); }
 .seg { display: inline-flex; background: var(--chip); border-radius: 9px; padding: 2px; }
-.seg button { border: 0; background: none; padding: 5px 14px; border-radius: 7px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; }
+.seg button { border: 0; background: none; padding: 5px 14px; border-radius: 7px; font-size: calc(13px * var(--fs)); font-weight: 600; color: var(--muted); cursor: pointer; }
 .seg button.on { background: var(--panel); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
 
 /* ---------- 编辑 / 预览 ---------- */
 .editor-name { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--panel); border-bottom: 1px solid var(--border); }
-.editor-name label { color: var(--muted); font-size: 13px; flex: none; }
-.editor-name input { flex: 1; min-width: 0; border: 0; background: none; color: var(--text); font: inherit; font-size: 15px; padding: 6px 0; outline: none; }
-.editor-text { flex: 1; width: 100%; border: 0; resize: none; padding: 14px; background: var(--panel); color: var(--text); outline: none; font: 15px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
-.editor-count { padding: 6px 14px; font-size: 12px; color: var(--faint); background: var(--panel); border-top: 1px solid var(--border); }
-.doc-view { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; font-size: 14px; line-height: 1.75; }
+.editor-name label { color: var(--muted); font-size: calc(13px * var(--fs)); flex: none; }
+.editor-name input { flex: 1; min-width: 0; border: 0; background: none; color: var(--text); font: inherit; font-size: calc(15px * var(--fs)); padding: 6px 0; outline: none; }
+.editor-text { flex: 1; width: 100%; border: 0; resize: none; padding: 14px; background: var(--panel); color: var(--text); outline: none; font: calc(15px * var(--fs))/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.editor-count { padding: 6px 14px; font-size: calc(12px * var(--fs)); color: var(--faint); background: var(--panel); border-top: 1px solid var(--border); }
+.doc-view { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; font-size: calc(14px * var(--fs)); line-height: 1.75; }
 .doc-view .p { white-space: pre-wrap; word-break: break-word; min-height: 1.75em; }
-.doc-view .t { font-size: 19px; font-weight: 700; margin-bottom: 4px; }
-.doc-view .meta { color: var(--muted); font-size: 13px; }
-.doc-view .b { margin: 18px 0 6px; padding: 4px 10px; background: var(--chip); border-left: 3px solid var(--text); font-weight: 600; font-size: 13px; word-break: break-all; }
-.doc-view .e { margin: 6px 0 4px; padding: 2px 10px; color: var(--faint); font-size: 12px; border-left: 3px solid var(--border); word-break: break-all; }
+.doc-view .t { font-size: calc(19px * var(--fs)); font-weight: 700; margin-bottom: 4px; }
+.doc-view .meta { color: var(--muted); font-size: calc(13px * var(--fs)); }
+.doc-view .b { margin: 18px 0 6px; padding: 4px 10px; background: var(--chip); border-left: 3px solid var(--text); font-weight: 600; font-size: calc(13px * var(--fs)); word-break: break-all; }
+.doc-view .e { margin: 6px 0 4px; padding: 2px 10px; color: var(--faint); font-size: calc(12px * var(--fs)); border-left: 3px solid var(--border); word-break: break-all; }
 .doc-view .more-note { color: var(--muted); text-align: center; padding: 16px 0 0; }
 .summary { display: flex; align-items: center; gap: 12px; padding: 14px; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 4px; }
 .summary .avatar { width: 48px; height: 48px; }
-.summary .s-title { font-size: 16px; font-weight: 600; word-break: break-all; }
-.summary .s-sub { font-size: 13px; color: var(--muted); }
+.summary .s-title { font-size: calc(16px * var(--fs)); font-weight: 600; word-break: break-all; }
+.summary .s-sub { font-size: calc(13px * var(--fs)); color: var(--muted); }
 
+
+/* ---------- 拆分词 / 批注 ---------- */
+.marker-card { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; margin: 10px 0 4px; }
+.mk-main { flex: 1; min-width: 0; }
+.mk-label { font-size: calc(12px * var(--fs)); color: var(--muted); }
+.mk-code { font-size: calc(15px * var(--fs)); font-weight: 600; word-break: break-all; }
+.mk-hint { flex-basis: 100%; font-size: calc(12px * var(--fs)); color: var(--muted); }
+.mk-hint.err-text { color: var(--danger); }
+.mk-editor { display: flex; flex-direction: column; gap: 8px; }
+.mk-input { width: 100%; height: 42px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); padding: 0 12px; font: inherit; font-size: calc(15px * var(--fs)); }
+.mk-input:focus { outline: 2px solid var(--border); }
+.note-tag { display: inline-block; font-size: calc(11px * var(--fs)); font-weight: 600; padding: 0 5px; margin-right: 6px; border-radius: 4px; line-height: 17px; background: var(--chip-strong); color: var(--chip-strong-text); vertical-align: 1px; }
+.row-edit { width: 36px; height: 36px; color: var(--muted); margin: -6px -4px; }
+.row-edit svg.i { width: 19px; height: 19px; }
+.list.sorting .row-edit { display: none; }
+.summary.tappable { cursor: pointer; }
+.summary.tappable:hover { background: var(--hover); }
+.s-note { margin-top: 4px; font-size: calc(13px * var(--fs)); }
 /* ---------- 提示 ---------- */
 #toasts { position: fixed; left: 50%; transform: translateX(-50%); bottom: 96px; z-index: 90; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; width: max-content; max-width: calc(100% - 32px); }
-.toast { background: rgba(24,24,27,.92); color: #fafafa; padding: 10px 16px; border-radius: 10px; font-size: 14px; text-align: center; animation: fade .2s; box-shadow: var(--pop-shadow); }
+.toast { background: rgba(24,24,27,.92); color: #fafafa; padding: 10px 16px; border-radius: 10px; font-size: calc(14px * var(--fs)); text-align: center; animation: fade .2s; box-shadow: var(--pop-shadow); }
 .toast.err { background: var(--swipe-red); }
-.wx-tip { display: flex; gap: 8px; align-items: flex-start; background: var(--chip); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; margin: 12px 0 0; font-size: 13px; }
+.wx-tip { display: flex; gap: 8px; align-items: flex-start; background: var(--chip); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; margin: 12px 0 0; font-size: calc(13px * var(--fs)); }
 @media (pointer: coarse) { .no-touch { display: none !important; } }
 
 /* ---------- 手机 ---------- */
@@ -278,14 +297,14 @@ body.dragging-files .drop-overlay { display: flex; }
     background: var(--bar-bg); -webkit-backdrop-filter: saturate(1.6) blur(16px); backdrop-filter: saturate(1.6) blur(16px);
   }
   .appbar .logo, .appbar .desc, .appbar .app-name { display: none; }
-  .appbar .page-name { display: block; font-size: 20px; }
+  .appbar .page-name { display: block; font-size: calc(20px * var(--fs)); }
   .wx-tip { margin: 8px 12px 0; }
   .tabbar {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; margin: 0; gap: 0; border-top: 1px solid var(--border); border-bottom: 0;
     background: var(--bar-bg); -webkit-backdrop-filter: saturate(1.6) blur(16px); backdrop-filter: saturate(1.6) blur(16px);
     padding-bottom: env(safe-area-inset-bottom);
   }
-  .tab { flex: 1; flex-direction: column; gap: 2px; padding: 7px 0 5px; font-size: 11px; font-weight: 500; border: 0; margin: 0; color: var(--faint); }
+  .tab { flex: 1; flex-direction: column; gap: 2px; padding: 7px 0 5px; font-size: calc(11px * var(--fs)); font-weight: 500; border: 0; margin: 0; color: var(--faint); }
   .tab svg.i { width: 24px; height: 24px; }
   .tab.active { color: var(--text); }
   .tab .badge { position: absolute; top: 3px; left: calc(50% + 8px); background: var(--chip-strong); color: var(--chip-strong-text); }
@@ -299,7 +318,7 @@ body.dragging-files .drop-overlay { display: flex; }
     border-left: 0; border-right: 0; border-bottom: 0; box-shadow: none; padding: 8px 10px; background: var(--bar-bg);
     -webkit-backdrop-filter: saturate(1.6) blur(16px); backdrop-filter: saturate(1.6) blur(16px);
   }
-  input, textarea, select, .composer input, .searchbar input { font-size: 16px !important; }
+  input, textarea, select, .composer input, .searchbar input { font-size: max(16px, calc(16px * var(--fs))) !important; }
   .layer-bg { padding: 0; }
   .page-bg { align-items: stretch; background: rgba(0,0,0,.2); }
   .page { max-width: none; height: 100%; border-radius: 0; animation: slide .22s ease-out; }
@@ -606,66 +625,144 @@ const txtBlob = text => new Blob(['﻿' + text.replace(/\n/g, '\r\n')], { type: 
 
 // ---------- 合并 / 拆分格式 ----------
 const TITLE_PREFIX = '【文档合集】';
+// 拆分词：每个文件开头的那一行，{文件名} 会换成真正的文件名。“经典”是最早的 <<<<< 开始/结束 >>>>> 格式
+const NAME_TOKEN = '{文件名}';
+const CLASSIC = '经典';
+const MARKER_PRESETS = ['═════ {文件名} ═════', '✦ {文件名} ✦', '—— {文件名} ——', '### {文件名}', '【{文件名}】', CLASSIC];
+const DEFAULT_MARKER = MARKER_PRESETS[0];
 const beginLine = (i, n, name) => `<<<<<<<<<< 文件 ${i}/${n} 开始：${name} >>>>>>>>>>`;
 const endLine = (i, n, name) => `<<<<<<<<<< 文件 ${i}/${n} 结束：${name} >>>>>>>>>>`;
 const BEGIN_RE = /^\s*<{3,}\s*文件\s*\d+\s*\/\s*\d+\s*开始\s*[:：]\s*(.*?)\s*>{3,}\s*$/;
 const END_RE = /^\s*<{3,}\s*文件\s*\d+\s*\/\s*\d+\s*结束\s*[:：]\s*(.*?)\s*>{3,}\s*$/;
+const DECLARE_PREFIX = '拆分词：';
+const DECLARE_RE = /^\s*拆分词\s*[:：]\s*(.+?)\s*$/;
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const oneLine = s => String(s || '').replace(/\s*\n\s*/g, ' ').trim();
 
-// 合并文件开头放什么：标题+统计、说明文字、目录，都可以关掉
-const DEFAULT_INTRO = '本文件由「文档合并拆分」工具生成，导回工具即可按原文件名拆分。请勿改动 <<<<< 分隔行 >>>>>。';
-const DEFAULT_HEADER = { title: true, toc: true, intro: DEFAULT_INTRO };
+// 整理用户输入的拆分词：去掉“拆分词：”前缀；没写 {文件名} 就放在最后；只有 {文件名} 没有别的字不算
+function normMarker(m) {
+  m = String(m || '').replace(/^\s*拆分词\s*[:：]\s*/, '').trim();
+  if (!m) return '';
+  if (m.startsWith(CLASSIC)) return CLASSIC;
+  if (!m.includes(NAME_TOKEN)) m += ' ' + NAME_TOKEN;
+  return m.replace(NAME_TOKEN, '').trim() ? m : '';
+}
+const sepLine = (marker, name) => marker.replace(NAME_TOKEN, () => name);
+
+// 返回一个函数：这一行是分隔行就返回文件名，不是就返回 null
+function markerMatcher(marker) {
+  if (marker === CLASSIC) return line => { const m = BEGIN_RE.exec(line); return m ? m[1] : null; };
+  const i = marker.indexOf(NAME_TOKEN);
+  const pre = marker.slice(0, i).trim(), suf = marker.slice(i + NAME_TOKEN.length).trim();
+  const re = new RegExp('^\\s*' + reEsc(pre) + '\\s*(.*?)\\s*' + reEsc(suf) + '\\s*$');
+  return line => { const m = re.exec(line); return m ? m[1] : null; };
+}
+
+// 合并文件开头放什么：标题+统计、拆分词、说明文字、目录，都可以关掉
+const DEFAULT_INTRO = '本文件由「文档合并拆分」工具生成，导回工具即可按原文件名拆开。';
+const DEFAULT_HEADER = { title: true, declare: true, toc: true, intro: DEFAULT_INTRO };
 
 // 生成合并内容：返回段落数组，txt 直接按行拼接，docx 每行一个段落
-function mergedParas(title, files, header = DEFAULT_HEADER) {
+function mergedParas(title, files, header = DEFAULT_HEADER, marker = DEFAULT_MARKER) {
   const n = files.length;
   const paras = [];
   if (header.title) {
     paras.push({ text: TITLE_PREFIX + title, kind: 'title' });
     paras.push({ text: `共 ${n} 个文件 · 生成于 ${fmtTime(Date.now())}`, kind: 'meta' });
   }
+  if (header.declare !== false) paras.push({ text: DECLARE_PREFIX + marker, kind: 'meta' });
   if (header.intro && header.intro.trim()) {
     for (const line of normalizeNL(header.intro.trim()).split('\n')) paras.push({ text: line, kind: 'meta' });
   }
   if (header.toc) {
     paras.push({ text: '目录：', kind: 'meta' });
-    files.forEach((f, i) => paras.push({ text: `${i + 1}. ${f.name}`, kind: 'meta' }));
+    files.forEach((f, i) => paras.push({ text: `${i + 1}. ${f.name}` + (oneLine(f.note) ? `　（${oneLine(f.note)}）` : ''), kind: 'meta' }));
   }
   if (paras.length) paras.push({ text: '' });
   files.forEach((f, i) => {
-    paras.push({ text: beginLine(i + 1, n, f.name), kind: 'begin' });
+    paras.push({ text: marker === CLASSIC ? beginLine(i + 1, n, f.name) : sepLine(marker, f.name), kind: 'begin' });
     for (const line of normalizeNL(f.text).split('\n')) paras.push({ text: line });
-    paras.push({ text: endLine(i + 1, n, f.name), kind: 'end' });
+    if (marker === CLASSIC) paras.push({ text: endLine(i + 1, n, f.name), kind: 'end' });
     paras.push({ text: '' });
   });
   return paras;
 }
 
-async function mergedBlob(title, files, format, header) {
-  const paras = mergedParas(title, files, header);
+async function mergedBlob(title, files, format, header, marker) {
+  const paras = mergedParas(title, files, header, marker);
   return format === 'docx' ? buildDocx(paras) : txtBlob(paras.map(p => p.text).join('\n'));
 }
 
-const markerLine = text => normalizeNL(text).split('\n').find(l => BEGIN_RE.test(l) || END_RE.test(l));
+// 检查合并结果能不能原样拆回来：除了真正的分隔行，别的行都不能长得像分隔行
+function mergeProblem(title, files, header, marker) {
+  if (!marker) return '拆分词不能为空';
+  const match = markerMatcher(marker);
+  let i = -1;
+  for (const p of mergedParas(title, files, header, marker)) {
+    if (p.kind === 'begin') { i++; if (match(p.text) !== files[i].name.trim()) return `文件名「${files[i].name}」和拆分词冲突，请改一下文件名或拆分词`; continue; }
+    if (p.kind === 'end') continue;
+    if (match(p.text) != null || (marker === CLASSIC && END_RE.test(p.text))) {
+      const where = i < 0 ? '开头的说明 / 目录' : `「${files[i].name}」`;
+      return `${where}里有一行「${p.text.slice(0, 24)}」和拆分词长得一样，拆分会出错。换一个拆分词就好`;
+    }
+  }
+  return null;
+}
 
-function parseMerged(text) {
+// 猜拆分词：先看开头有没有写“拆分词：xxx”，再看是不是经典格式，最后试常用的拆分词。sure 表示是写明了的
+function detectMarker(lines, candidates) {
+  for (const l of lines.slice(0, 400)) {
+    const m = DECLARE_RE.exec(l);
+    if (m && normMarker(m[1])) return { marker: normMarker(m[1]), sure: true };
+  }
+  if (lines.some(l => BEGIN_RE.test(l))) return { marker: CLASSIC, sure: true };
+  let best = null, bestN = 0;
+  for (const mk of candidates) {
+    if (mk === CLASSIC) continue;
+    const match = markerMatcher(mk), n = lines.filter(l => match(l) != null).length;
+    if (n > bestN) { best = mk; bestN = n; }
+  }
+  return { marker: best, sure: false };
+}
+
+function parseMerged(text, marker, candidates = MARKER_PRESETS) {
   const lines = normalizeNL(text).split('\n');
-  let title = null, cur = null;
-  const files = [];
+  let sure = true;
+  if (marker) marker = normMarker(marker);
+  else ({ marker, sure } = detectMarker(lines, candidates));
+  if (!marker) return { marker: null, sure: false, title: null, files: [] };
+  const match = markerMatcher(marker);
+  let title = null, cur = null, inToc = false;
+  const files = [], notes = [];
   for (const line of lines) {
-    let m;
-    if ((m = BEGIN_RE.exec(line))) {
+    const name = match(line);
+    if (name != null) {
       if (cur) files.push(cur);
-      cur = { name: m[1] || `文件${files.length + 1}.txt`, lines: [] };
-    } else if (cur && END_RE.test(line)) {
-      files.push(cur); cur = null;
+      cur = { name: name || `文件${files.length + 1}.txt`, lines: [] };
     } else if (cur) {
-      cur.lines.push(line);
-    } else if (title == null && line.startsWith(TITLE_PREFIX)) {
-      title = line.slice(TITLE_PREFIX.length).trim();
+      if (marker === CLASSIC && END_RE.test(line)) { files.push(cur); cur = null; }
+      else cur.lines.push(line);
+    } else if (!files.length) {
+      // 第一个文件之前：标题和目录（目录里括号里的是批注）
+      if (title == null && line.startsWith(TITLE_PREFIX)) title = line.slice(TITLE_PREFIX.length).trim();
+      else if (/^\s*目录[:：]\s*$/.test(line)) inToc = true;
+      else if (inToc) {
+        const m = /^(\d+)\.\s(.*?)(?:　（(.*)）)?$/.exec(line);
+        if (m) notes[+m[1] - 1] = m[3] || ''; else inToc = false;
+      }
     }
   }
   if (cur) files.push(cur);
-  return { title, files: files.map(f => ({ name: f.name, text: f.lines.join('\n') })) };
+  return {
+    marker, sure, title,
+    files: files.map((f, i) => {
+      // 自定义拆分词的格式里，每个文件后面会多一个空行
+      if (marker !== CLASSIC && f.lines.length && f.lines[f.lines.length - 1] === '') f.lines.pop();
+      const out = { name: f.name, text: f.lines.join('\n') };
+      if (notes[i]) out.note = notes[i];
+      return out;
+    }),
+  };
 }
 
 // 目标格式：orig 按原扩展名；txt / docx 强制
@@ -880,7 +977,7 @@ const closeSwipe = () => {
 };
 document.addEventListener('pointerdown', e => { if (openSwipe && !openSwipe.contains(e.target)) closeSwipe(); }, true);
 
-function listRow({ avatar, title, sub, right, onTap, menu, swipe = [], hover = [] }) {
+function listRow({ avatar, title, sub, right, onTap, edit, menu, swipe = [], hover = [] }) {
   const back = h('div', { class: 'row-back' }, swipe.map(s => h('button', { class: s.cls || 'gray', onclick: e => { e.stopPropagation(); closeSwipe(); s.run(); } }, s.label)));
   const front = h('div', { class: 'row-front', tabindex: '0' },
     avatar,
@@ -889,6 +986,7 @@ function listRow({ avatar, title, sub, right, onTap, menu, swipe = [], hover = [
     hover.length || menu ? h('div', { class: 'row-hover' },
       hover.map(a => h('button', { class: 'iconbtn', title: a.label, 'aria-label': a.label, onclick: e => { e.stopPropagation(); a.run(); } }, icon(a.icon))),
       menu ? h('button', { class: 'iconbtn', title: '更多', 'aria-label': '更多', onclick: e => { e.stopPropagation(); menuAt(e.currentTarget, menu()); } }, icon('more')) : null) : null,
+    edit ? h('button', { class: 'iconbtn row-edit', title: '编辑', 'aria-label': '编辑', onclick: e => { e.stopPropagation(); edit(); } }, icon('edit')) : null,
     h('span', { class: 'handle', title: '按住拖动', 'aria-label': '拖动排序' }, icon('handle')));
   const li = h('li', { class: 'row' }, swipe.length ? back : null, front);
 
@@ -1014,38 +1112,74 @@ function listHead(el, { count, sorting, onSortMode, onSort }) {
       h('button', { class: 'textbtn', onclick: () => onSortMode(true) }, '排序')]));
 }
 
-// ---------- 编辑页：改名字和内容 ----------
-function openEditor({ name, text, heading = '编辑' }, onSave) {
+// ---------- 编辑页：改名字、批注和内容 ----------
+function openEditor({ name, text, note = '', heading = '编辑' }, onSave) {
   const nameIn = h('input', { type: 'text', value: name, placeholder: '比如 须知.txt', enterkeyhint: 'next', 'aria-label': '文件名' });
+  const noteIn = h('input', { type: 'text', value: note || '', placeholder: '可不填，比如：第 3 个注入 / 深度 4', enterkeyhint: 'next', 'aria-label': '批注' });
   const ta = h('textarea', { class: 'editor-text', spellcheck: 'false', placeholder: '在这里输入内容…', 'aria-label': '内容' });
   ta.value = text;
   const count = h('div', { class: 'editor-count' }, fmtChars(text.length));
   ta.addEventListener('input', () => { count.textContent = fmtChars(ta.value.length); });
-  nameIn.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); ta.focus(); } });
+  nameIn.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); noteIn.focus(); } });
+  noteIn.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); ta.focus(); } });
   openPage(heading, api => {
     const save = () => {
       const n = nameIn.value.replace(/[\r\n]+/g, ' ').trim();
       if (!n) { toast('文件名不能为空', true); nameIn.focus(); return; }
-      if (/[<>]{3,}/.test(n)) { toast('文件名里不能有连续的 < 或 >', true); return; }
-      const bad = markerLine(ta.value);
-      if (bad) { toast('内容里有一行和分隔行一样，拆分会出错，请改一下：' + bad.slice(0, 30), true); return; }
-      onSave(n, normalizeNL(ta.value));
+      onSave(n, normalizeNL(ta.value), oneLine(noteIn.value));
       api.close(true);
     };
-    api.beforeClose = () => (nameIn.value === name && ta.value === text) || confirm('有修改还没保存，确定放弃？');
+    api.beforeClose = () => (nameIn.value === name && ta.value === text && noteIn.value === (note || '')) || confirm('有修改还没保存，确定放弃？');
     api.onKey = e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); save(); } };
     return {
       right: [h('button', { class: 'textbtn', onclick: save }, '保存')],
-      body: h('div', { class: 'page-body flush' }, h('div', { class: 'editor-name' }, h('label', {}, '文件名'), nameIn), ta, count),
+      body: h('div', { class: 'page-body flush' },
+        h('div', { class: 'editor-name' }, h('label', {}, '文件名'), nameIn),
+        h('div', { class: 'editor-name' }, h('label', {}, '批注'), noteIn),
+        ta, count),
     };
   });
   if (!isTouch()) (name ? ta : nameIn).focus();
 }
 
+// ---------- 拆分词 ----------
+async function copyText(text, msg = '已复制') {
+  try { await navigator.clipboard.writeText(text); toast(msg); }
+  catch { prompt('长按复制下面的内容：', text); }
+}
+const copyMarker = marker => copyText(DECLARE_PREFIX + marker, '拆分词已复制，分享文件时一起发给对方');
+const markerShown = m => m === CLASSIC ? '经典（<<<<< 开始 / 结束 >>>>>）' : m;
+
+// 显示拆分词 + 一键复制
+function markerCard(marker, hint) {
+  return h('div', { class: 'marker-card' },
+    h('div', { class: 'mk-main' }, h('div', { class: 'mk-label' }, '拆分词'), h('div', { class: 'mk-code' }, markerShown(marker))),
+    ibtn('', 'copy', '复制', { onclick: () => copyMarker(marker) }),
+    hint ? h('div', { class: 'mk-hint' }, hint) : null);
+}
+
+// 输入拆分词：带效果预览和常用写法
+function markerInput(value, onChange, { debounce = 0 } = {}) {
+  const inp = h('input', { type: 'text', class: 'mk-input', value: value === CLASSIC ? CLASSIC : value, placeholder: '比如 ✦ {文件名} ✦', spellcheck: 'false', 'aria-label': '拆分词' });
+  const prev = h('div', { class: 'mk-hint' });
+  let timer;
+  const paint = () => {
+    const m = normMarker(inp.value);
+    prev.textContent = m ? '效果：' + (m === CLASSIC ? beginLine(1, 3, '须知.txt') : sepLine(m, '须知.txt')) : '还没填拆分词';
+  };
+  const fire = () => { paint(); clearTimeout(timer); timer = setTimeout(() => onChange(normMarker(inp.value)), debounce); };
+  inp.addEventListener('input', fire);
+  const chips = h('div', { class: 'chips' }, [...new Set([...settings.markerHistory, ...MARKER_PRESETS])].slice(0, 9).map(m =>
+    h('button', { class: 'chip', onclick: () => { inp.value = m; fire(); } }, m === CLASSIC ? '经典' : m)));
+  paint();
+  return h('div', { class: 'mk-editor' }, inp, prev,
+    h('div', { class: 'mk-hint' }, '{文件名} 会换成每个文件的名字，不写就放在最后。常用：'), chips);
+}
+
 // ---------- 合并预览 ----------
 const PREVIEW_LIMIT = 6000;
-function previewMerged(title, files, header, foot) {
-  const paras = mergedParas(title, files, header);
+function previewMerged(title, files, header, marker, foot) {
+  const paras = mergedParas(title, files, header, marker);
   const view = h('div', { class: 'doc-view' });
   let buf = [];
   const flush = () => { if (buf.length) { view.append(h('div', { class: 'p' }, buf.join('\n'))); buf = []; } };
@@ -1059,6 +1193,7 @@ function previewMerged(title, files, header, foot) {
   const total = files.reduce((n, f) => n + f.text.length, 0);
   openPage('预览', api => ({
     body: h('div', { class: 'page-body' },
+      markerCard(marker, '分享合并文件时，把拆分词一起告诉对方。对方导入时如果没自动认出来，输入它就能拆开。'),
       h('div', { class: 'list-head' }, `${title} · ${files.length} 个文件 · ${fmtChars(total)}`), view),
     foot: h('div', { class: 'page-foot' }, foot.filter(Boolean).map(b =>
       ibtn(b.primary ? 'primary' : '', b.icon, b.label, { onclick: () => b.run(api) }))),
@@ -1080,9 +1215,14 @@ function snippet(text, q) {
   const start = Math.max(0, i - 10), flat = s => s.replace(/\s+/g, ' ');
   return h('span', {}, (start ? '…' : '') + flat(text.slice(start, i)), h('mark', {}, text.slice(i, i + q.length)), flat(text.slice(i + q.length, i + q.length + 40)));
 }
+const noteTag = note => note ? h('span', {}, h('span', { class: 'note-tag' }, '批注'), note) : null;
+const fileSub = f => f.note
+  ? h('span', {}, noteTag(f.note), ' · ' + fmtChars(f.text.length))
+  : `${fmtChars(f.text.length)} · ${firstLine(f.text) || '（空）'}`;
 
 // ---------- 记录（目录里的一条） ----------
 const headerOf = rec => rec.header || DEFAULT_HEADER;
+const markerOf = rec => rec.marker || CLASSIC; // 早期的记录用的是经典格式
 const recSaved = new Set(); // 已经在目录里的记录 id
 
 async function persistRec(rec) {
@@ -1091,33 +1231,61 @@ async function persistRec(rec) {
   refreshCatalog();
 }
 
-const dlMerged = (rec, fmt) => run(async () => saveBlob(await mergedBlob(rec.title, rec.files, fmt, headerOf(rec)), safeName(rec.title) + '.' + fmt));
-const shareMerged = (rec, fmt) => run(async () => shareBlob(await mergedBlob(rec.title, rec.files, fmt, headerOf(rec)), safeName(rec.title) + '.' + fmt));
+async function recBlob(rec, fmt) {
+  const problem = mergeProblem(rec.title, rec.files, headerOf(rec), markerOf(rec));
+  if (problem) throw new Error(problem);
+  return mergedBlob(rec.title, rec.files, fmt, headerOf(rec), markerOf(rec));
+}
+const dlMerged = (rec, fmt) => run(async () => saveBlob(await recBlob(rec, fmt), safeName(rec.title) + '.' + fmt));
+const shareMerged = (rec, fmt) => run(async () => shareBlob(await recBlob(rec, fmt), safeName(rec.title) + '.' + fmt));
 
 function downloadSheet(rec) {
   sheet('下载合并文件', [
     { icon: 'download', label: '下载 docx', run: dlMerged(rec, 'docx') },
     { icon: 'download', label: '下载 txt', run: dlMerged(rec, 'txt') },
     canShareFiles() ? { icon: 'share', label: '分享给其他 App（docx）', run: shareMerged(rec, 'docx') } : null,
+    { icon: 'copy', label: '复制拆分词', hint: markerShown(markerOf(rec)), run: () => copyMarker(markerOf(rec)) },
   ]);
 }
 
 function fileDownloadSheet(f) {
-  const orig = outputOf(f.name, 'orig').name;
   sheet('下载「' + baseName(f.name) + '」', [
-    { icon: 'download', label: '原格式', hint: baseName(orig), run: run(() => downloadFile(f, 'orig')) },
+    { icon: 'download', label: '原格式', hint: baseName(outputOf(f.name, 'orig').name), run: run(() => downloadFile(f, 'orig')) },
     { icon: 'download', label: '存成 txt', hint: baseName(outputOf(f.name, 'txt').name), run: run(() => downloadFile(f, 'txt')) },
     { icon: 'download', label: '存成 docx', hint: baseName(outputOf(f.name, 'docx').name), run: run(() => downloadFile(f, 'docx')) },
   ]);
 }
 
-const renameRec = (rec, after) => run(async () => {
-  const t = prompt('新的总文件名：', rec.title);
-  if (!t || !t.trim()) return;
-  rec.title = t.trim();
-  await persistRec(rec);
-  after && after();
-});
+// 改记录的名字、批注、拆分词
+function openRecordInfo(rec, after) {
+  const titleIn = h('input', { type: 'text', class: 'mk-input', value: rec.title, 'aria-label': '名称' });
+  const noteIn = h('textarea', { rows: '4', placeholder: '比如：按 1→5 的顺序注入；第 2 个放在角色卡后面', 'aria-label': '批注' });
+  noteIn.value = rec.note || '';
+  let marker = markerOf(rec);
+  openPage('编辑信息', api => {
+    const save = run(async () => {
+      const t = titleIn.value.trim();
+      if (!t) { toast('名称不能为空', true); return; }
+      if (!marker) { toast('拆分词不能为空', true); return; }
+      Object.assign(rec, { title: t, note: noteIn.value.trim(), marker });
+      await persistRec(rec);
+      api.close(true); toast('已保存'); after && after();
+    });
+    api.beforeClose = () => (titleIn.value === rec.title && noteIn.value === (rec.note || '') && marker === markerOf(rec)) || confirm('有修改还没保存，确定放弃？');
+    return {
+      right: [h('button', { class: 'textbtn', onclick: save }, '保存')],
+      body: h('div', { class: 'page-body' },
+        h('div', { class: 'group-title' }, '名称'),
+        h('div', { class: 'group' }, h('div', { class: 'cell col' }, titleIn)),
+        h('div', { class: 'group-title' }, '批注'),
+        h('div', { class: 'group' }, h('div', { class: 'cell col' }, noteIn)),
+        h('div', { class: 'group-note' }, '写给自己或别人看的说明，比如注入顺序。每个文件也可以单独写批注（点文件右边的笔）。'),
+        h('div', { class: 'group-title' }, '拆分词（下载合并文件时用）'),
+        h('div', { class: 'group' }, h('div', { class: 'cell col' }, markerInput(marker, m => { marker = m; })))),
+    };
+  });
+}
+
 const deleteRec = (rec, after) => run(async () => {
   if (!confirm(`从目录删除「${rec.title}」？`)) return;
   await DB.del(rec.id); recSaved.delete(rec.id);
@@ -1132,21 +1300,24 @@ function closeAllLayers() { while (layers.length) layers[layers.length - 1].clos
 function recMenu(rec, refresh) {
   return [
     { icon: 'eye', label: '打开', run: () => openRecord(rec, { onChange: refresh }) },
+    { icon: 'edit', label: '编辑信息 / 批注', run: () => openRecordInfo(rec, refresh) },
     { icon: 'download', label: '下载合并文件', run: () => downloadSheet(rec) },
     { icon: 'zip', label: '打包 zip', run: run(() => downloadZip(rec.title, rec.files, 'orig')) },
+    { icon: 'copy', label: '复制拆分词', run: () => copyMarker(markerOf(rec)) },
     { icon: 'merge', label: '载入合并区', run: () => loadRecToMerge(rec) },
-    { icon: 'edit', label: '重命名', run: renameRec(rec, refresh) },
+    recSaved.has(rec.id) ? '-' : null,
     recSaved.has(rec.id) ? { icon: 'trash', label: '删除', danger: true, run: deleteRec(rec, refresh) } : null,
   ];
 }
 
 function recRow(rec, { query = '', refresh } = {}) {
-  let sub = rec.files.map(f => baseName(f.name)).join('、');
-  if (query) {
-    const hit = rec.files.find(f => f.text.toLowerCase().includes(query) && !f.name.toLowerCase().includes(query));
-    if (hit && !rec.title.toLowerCase().includes(query) && !rec.files.some(f => f.name.toLowerCase().includes(query))) {
-      sub = h('span', {}, baseName(hit.name) + '：', snippet(hit.text, query));
-    }
+  let sub = rec.note ? noteTag(rec.note) : rec.files.map(f => baseName(f.name)).join('、');
+  if (query && !rec.title.toLowerCase().includes(query)) {
+    const inName = rec.files.find(f => f.name.toLowerCase().includes(query));
+    const inNote = !inName && [rec, ...rec.files].find(x => (x.note || '').toLowerCase().includes(query));
+    const inText = !inName && !inNote && rec.files.find(f => f.text.toLowerCase().includes(query));
+    if (inNote) sub = h('span', {}, h('span', { class: 'note-tag' }, '批注'), snippet(inNote.note, query));
+    else if (inText) sub = h('span', {}, baseName(inText.name) + '：', snippet(inText.text, query));
   }
   return listRow({
     avatar: h('div', { class: 'avatar ' + rec.kind }, icon(rec.kind === 'merge' ? 'files' : 'inbox')),
@@ -1156,19 +1327,20 @@ function recRow(rec, { query = '', refresh } = {}) {
     onTap: () => openRecord(rec, { onChange: refresh }),
     menu: () => recMenu(rec, refresh),
     swipe: [
-      { label: '重命名', cls: 'gray', run: renameRec(rec, refresh) },
+      { label: '编辑', cls: 'gray', run: () => openRecordInfo(rec, refresh) },
       recSaved.has(rec.id) ? { label: '删除', cls: 'red', run: deleteRec(rec, refresh) } : null,
     ].filter(Boolean),
     hover: [{ icon: 'download', label: '下载合并文件', run: () => downloadSheet(rec) }],
   });
 }
 
-// 打开一条记录：里面一个个文件，可以编辑、排序、删除、下载
+// 打开一条记录：里面一个个文件，可以编辑、批注、排序、删除、下载
 function openRecord(rec, { onChange } = {}) {
   let sorting = false;
   const list = h('ul', { class: 'list' });
   const head = h('div', { class: 'list-head' });
-  const summary = h('div', { class: 'summary' });
+  const summary = h('div', { class: 'summary tappable', title: '编辑名称和批注', onclick: () => openRecordInfo(rec, () => { render(); onChange && onChange(); }) });
+  const mkBox = h('div');
   let pageApi;
   const changed = run(async () => { render(); await persistRec(rec); onChange && onChange(); });
   const move = (from, to) => { if (from !== to) { arrMove(rec.files, from, to); changed(); } else render(); };
@@ -1190,7 +1362,10 @@ function openRecord(rec, { onChange } = {}) {
       h('div', { class: 'avatar ' + rec.kind }, icon(rec.kind === 'merge' ? 'files' : 'inbox')),
       h('div', { class: 'row-main' },
         h('div', { class: 's-title' }, rec.title),
-        h('div', { class: 's-sub' }, `${rec.kind === 'merge' ? '合并' : '导入拆分'} · ${fmtTime(rec.createdAt)} · ${fmtChars(total)}`, recSaved.has(rec.id) ? '' : ' · 未记录到目录')));
+        h('div', { class: 's-sub' }, `${rec.kind === 'merge' ? '合并' : '导入拆分'} · ${fmtTime(rec.createdAt)} · ${fmtChars(total)}`, recSaved.has(rec.id) ? '' : ' · 未记录到目录'),
+        h('div', { class: 's-note' }, rec.note ? noteTag(rec.note) : h('span', { class: 'muted' }, '点这里写批注，比如注入顺序'))),
+      h('span', { class: 'row-edit iconbtn', 'aria-hidden': 'true' }, icon('edit')));
+    mkBox.replaceChildren(markerCard(markerOf(rec)));
     listHead(head, {
       count: `${rec.files.length} 个文件`, sorting,
       onSortMode: v => { sorting = v; render(); },
@@ -1198,15 +1373,15 @@ function openRecord(rec, { onChange } = {}) {
     });
     list.classList.toggle('sorting', sorting);
     list.replaceChildren(...rec.files.map((f, i) => {
-      const edit = () => openEditor(f, (name, text) => { rec.files[i] = { name, text }; changed(); toast('已保存'); });
+      const edit = () => openEditor(f, (name, text, note) => { rec.files[i] = { name, text, ...(note ? { note } : {}) }; changed(); toast('已保存'); });
       return listRow({
         avatar: fileAvatar(typeOf(f.name)),
         title: f.name,
-        sub: `${fmtChars(f.text.length)} · ${firstLine(f.text) || '（空）'}`,
+        sub: fileSub(f),
         right: [h('span', {}, i + 1)],
-        onTap: edit,
+        onTap: edit, edit,
         menu: () => [
-          { icon: 'edit', label: '查看 / 编辑', run: edit },
+          { icon: 'edit', label: '编辑内容 / 批注', run: edit },
           { icon: 'download', label: '下载这个文件', run: () => fileDownloadSheet(f) },
           '-',
           { icon: 'top', label: '置顶', disabled: i === 0, run: () => move(i, 0) },
@@ -1224,37 +1399,87 @@ function openRecord(rec, { onChange } = {}) {
   pageApi = openPage(rec.title, api => ({
     right: [h('button', { class: 'iconbtn', title: '更多', 'aria-label': '更多', onclick: () => sheet(rec.title, [
       recSaved.has(rec.id) ? null : { icon: 'save', label: '记录到目录', run: run(async () => { recSaved.add(rec.id); await DB.put(rec); refreshCatalog(); onChange && onChange(); render(); toast('已记录到目录'); }) },
+      { icon: 'edit', label: '编辑名称 / 批注 / 拆分词', run: () => openRecordInfo(rec, () => { render(); onChange && onChange(); }) },
       { icon: 'merge', label: '载入合并区（可以再加文件）', run: () => loadRecToMerge(rec) },
-      { icon: 'edit', label: '重命名', run: renameRec(rec, () => { render(); onChange && onChange(); }) },
       recSaved.has(rec.id) ? { icon: 'trash', label: '删除这条记录', danger: true, run: deleteRec(rec, () => { api.close(true); onChange && onChange(); }) } : null,
     ]) }, icon('more'))],
-    body: h('div', { class: 'page-body' }, summary, head, list),
+    body: h('div', { class: 'page-body' }, summary, mkBox, head, list),
     foot: h('div', { class: 'page-foot' },
-      ibtn('', 'eye', '预览', { onclick: () => previewMerged(rec.title, rec.files, headerOf(rec), [
-        canShareFiles() ? { icon: 'share', label: '分享', run: () => shareMerged(rec, 'docx')() } : null,
-        { icon: 'download', label: '下载', primary: true, run: () => downloadSheet(rec) },
-      ]) }),
+      ibtn('', 'eye', '预览', { onclick: () => {
+        const problem = mergeProblem(rec.title, rec.files, headerOf(rec), markerOf(rec));
+        if (problem) { toast(problem, true); return; }
+        previewMerged(rec.title, rec.files, headerOf(rec), markerOf(rec), [
+          canShareFiles() ? { icon: 'share', label: '分享', run: () => shareMerged(rec, 'docx')() } : null,
+          { icon: 'download', label: '下载', primary: true, run: () => downloadSheet(rec) },
+        ]);
+      } }),
       ibtn('', 'zip', '打包 zip', { onclick: run(() => downloadZip(rec.title, rec.files, 'orig')) }),
       ibtn('primary', 'download', '下载合并', { onclick: () => downloadSheet(rec) })),
   }));
   render();
 }
 
-// ---------- 合并 ----------
-let mergeItems = [];
-let mergeSorting = false;
-let titleTouched = false;
-
+// ---------- 设置 ----------
+const FONT_LEVELS = [['小', 0.86], ['标准', 0.93], ['大', 1.03], ['特大', 1.15]];
 function loadSettings() {
   let s = {};
   try { s = JSON.parse(localStorage.getItem('dms-settings') || '{}'); } catch {}
-  return { format: s.format === 'txt' ? 'txt' : 'docx', save: s.save !== false, header: { ...DEFAULT_HEADER, ...(s.header || {}) } };
+  const header = { ...DEFAULT_HEADER, ...(s.header || {}) };
+  if (/分隔行/.test(header.intro)) header.intro = DEFAULT_INTRO; // 旧版默认说明
+  return {
+    format: s.format === 'txt' ? 'txt' : 'docx',
+    save: s.save !== false,
+    header,
+    marker: normMarker(s.marker) || DEFAULT_MARKER,
+    markerHistory: Array.isArray(s.markerHistory) ? s.markerHistory.filter(normMarker).slice(0, 6) : [],
+    fs: FONT_LEVELS.some(([, v]) => v === s.fs) ? s.fs : 0.93,
+    splitSave: s.splitSave !== false,
+  };
 }
 let settings = loadSettings();
 function saveSettings() {
   try { localStorage.setItem('dms-settings', JSON.stringify(settings)); } catch {}
   $('#fmtChip').textContent = settings.format.toUpperCase();
+  document.documentElement.style.setProperty('--fs', settings.fs);
 }
+function rememberMarker(m) {
+  if (!m || MARKER_PRESETS.includes(m)) return;
+  settings.markerHistory = [m, ...settings.markerHistory.filter(x => x !== m)].slice(0, 6);
+  saveSettings();
+}
+const markerCandidates = () => [...settings.markerHistory, ...MARKER_PRESETS];
+
+const sw = (checked, onchange) => { const el = h('input', { type: 'checkbox', class: 'switch' }); el.checked = checked; el.addEventListener('change', () => onchange(el.checked)); return el; };
+function segCtl(options, value, onPick) {
+  const seg = h('div', { class: 'seg' });
+  const paint = v => seg.replaceChildren(...options.map(([label, val]) => h('button', { class: val === v ? 'on' : '', onclick: () => { onPick(val); paint(val); } }, label)));
+  paint(value);
+  return seg;
+}
+
+function openAppSettings() {
+  openPage('设置', () => ({
+    body: h('div', { class: 'page-body' },
+      h('div', { class: 'group-title' }, '显示'),
+      h('div', { class: 'group' },
+        h('div', { class: 'cell' }, h('span', { class: 'label' }, '字体大小'), segCtl(FONT_LEVELS, settings.fs, v => { settings.fs = v; saveSettings(); })),
+        h('div', { class: 'cell' }, h('span', { class: 'label' }, '外观'), segCtl([['跟随系统', ''], ['浅色', 'light'], ['深色', 'dark']], themePref(), setTheme)),
+        h('div', { class: 'cell col' }, h('span', { class: 'muted small' }, '预览'), h('div', { class: 'row-title' }, '须知.txt'), h('div', { class: 'row-sub' }, '这是一段示例文字，调到自己看着舒服的大小。'))),
+      h('div', { class: 'group-title' }, '拆分'),
+      h('div', { class: 'group' },
+        h('label', { class: 'cell' }, h('span', { class: 'label' }, '导入后自动记录到目录'), sw(settings.splitSave, v => { settings.splitSave = v; saveSettings(); }))),
+      h('div', { class: 'group-title' }, '数据'),
+      h('div', { class: 'group' },
+        h('button', { class: 'cell sheet-item', onclick: exportCatalog }, icon('download'), '导出目录备份'),
+        h('button', { class: 'cell sheet-item', onclick: () => $('#importCatInput').click() }, icon('upload'), '导入备份')),
+      h('div', { class: 'group-note' }, '所有记录只存在这个浏览器里，换手机、换浏览器或清理浏览器数据前，记得先导出备份。')),
+  }));
+}
+
+// ---------- 合并 ----------
+let mergeItems = [];
+let mergeSorting = false;
+let titleTouched = false;
 
 function addToMerge(items, title) {
   mergeItems.push(...items.map(it => ({ ...it, id: uid() })));
@@ -1263,12 +1488,12 @@ function addToMerge(items, title) {
 }
 
 function editMergeItem(it) {
-  openEditor(it, (name, text) => { Object.assign(it, { name, text, type: typeOf(name) }); renderMerge(); toast('已保存'); });
+  openEditor(it, (name, text, note) => { Object.assign(it, { name, text, note, type: typeOf(name) }); renderMerge(); toast('已保存'); });
 }
 
 function newDoc() {
-  openEditor({ name: '须知.txt', text: '', heading: '新建文档' }, (name, text) => {
-    mergeItems.unshift({ id: uid(), name, text, type: typeOf(name) });
+  openEditor({ name: '须知.txt', text: '', heading: '新建文档' }, (name, text, note) => {
+    mergeItems.unshift({ id: uid(), name, text, note, type: typeOf(name) });
     renderMerge(); toast('已放到最前面');
   });
 }
@@ -1291,23 +1516,26 @@ function renderMerge() {
   });
   const ul = $('#mergeList');
   ul.classList.toggle('sorting', mergeSorting);
-  ul.replaceChildren(...mergeItems.map((it, i) => listRow({
-    avatar: fileAvatar(it.type),
-    title: it.name,
-    sub: it.error ? h('span', { class: 'err-text' }, it.error + '，合并时会跳过') : `${fmtChars(it.text.length)} · ${firstLine(it.text) || '（空）'}`,
-    right: [h('span', {}, i + 1)],
-    onTap: it.error ? null : () => editMergeItem(it),
-    menu: () => [
-      it.error ? null : { icon: 'edit', label: '查看 / 编辑', run: () => editMergeItem(it) },
-      { icon: 'top', label: '置顶', disabled: i === 0, run: () => moveMerge(i, 0) },
-      { icon: 'up', label: '上移', disabled: i === 0, run: () => moveMerge(i, i - 1) },
-      { icon: 'down', label: '下移', disabled: i === n - 1, run: () => moveMerge(i, i + 1) },
-      '-',
-      { icon: 'x', label: '移除', danger: true, run: removeMerge(i) },
-    ],
-    swipe: [{ label: '置顶', cls: 'gray', run: () => moveMerge(i, 0) }, { label: '移除', cls: 'red', run: removeMerge(i) }],
-    hover: [{ icon: 'top', label: '置顶', run: () => moveMerge(i, 0) }, { icon: 'x', label: '移除', run: removeMerge(i) }],
-  })));
+  ul.replaceChildren(...mergeItems.map((it, i) => {
+    const edit = it.error ? null : () => editMergeItem(it);
+    return listRow({
+      avatar: fileAvatar(it.type),
+      title: it.name,
+      sub: it.error ? h('span', { class: 'err-text' }, it.error + '，合并时会跳过') : fileSub(it),
+      right: [h('span', {}, i + 1)],
+      onTap: edit, edit,
+      menu: () => [
+        edit ? { icon: 'edit', label: '编辑内容 / 批注', run: edit } : null,
+        { icon: 'top', label: '置顶', disabled: i === 0, run: () => moveMerge(i, 0) },
+        { icon: 'up', label: '上移', disabled: i === 0, run: () => moveMerge(i, i - 1) },
+        { icon: 'down', label: '下移', disabled: i === n - 1, run: () => moveMerge(i, i + 1) },
+        '-',
+        { icon: 'x', label: '移除', danger: true, run: removeMerge(i) },
+      ],
+      swipe: [{ label: '置顶', cls: 'gray', run: () => moveMerge(i, 0) }, { label: '移除', cls: 'red', run: removeMerge(i) }],
+      hover: [{ icon: 'top', label: '置顶', run: () => moveMerge(i, 0) }, { icon: 'x', label: '移除', run: removeMerge(i) }],
+    });
+  }));
 }
 
 async function handleMergeFiles(fileList) {
@@ -1326,17 +1554,18 @@ async function handleMergeFiles(fileList) {
 }
 
 function mergeJob() {
-  const files = mergeItems.filter(it => !it.error).map(f => ({ name: f.name, text: f.text }));
+  const files = mergeItems.filter(it => !it.error).map(f => ({ name: f.name, text: f.text, ...(f.note ? { note: f.note } : {}) }));
   if (!files.length) return null;
-  return { files, header: { ...settings.header }, format: settings.format, title: $('#mergeTitle').value.trim() || '合并_' + stamp() };
+  return { files, header: { ...settings.header }, format: settings.format, marker: settings.marker, title: $('#mergeTitle').value.trim() || '合并_' + stamp() };
 }
 
 async function finishMerge(job, share) {
-  const blob = await mergedBlob(job.title, job.files, job.format, job.header);
+  const blob = await mergedBlob(job.title, job.files, job.format, job.header, job.marker);
   const name = safeName(job.title) + '.' + job.format;
   if (share) await shareBlob(blob, name); else saveBlob(blob, name);
+  rememberMarker(job.marker);
   if (settings.save) {
-    const rec = { id: uid(), kind: 'merge', title: job.title, format: job.format, header: job.header, createdAt: Date.now(), files: job.files };
+    const rec = { id: uid(), kind: 'merge', title: job.title, format: job.format, header: job.header, marker: job.marker, note: '', createdAt: Date.now(), files: job.files };
     await DB.put(rec); recSaved.add(rec.id); refreshCatalog();
   }
   toast(`已合并 ${job.files.length} 个文件` + (settings.save ? '，已记到目录' : ''));
@@ -1346,45 +1575,44 @@ async function finishMerge(job, share) {
 function startMerge() {
   const job = mergeJob();
   if (!job) return;
-  previewMerged(job.title, job.files, job.header, [
+  const problem = mergeProblem(job.title, job.files, job.header, job.marker);
+  if (problem) { toast(problem, true); return; }
+  previewMerged(job.title, job.files, job.header, job.marker, [
     canShareFiles() ? { icon: 'share', label: '分享', run: api => { api.close(true); run(() => finishMerge(job, true))(); } } : null,
     { icon: 'download', label: `下载 ${job.format}`, primary: true, run: api => { api.close(true); run(() => finishMerge(job, false))(); } },
   ]);
 }
 
 function openSettingsPage() {
-  const sw = (checked, onchange) => { const el = h('input', { type: 'checkbox', class: 'switch' }); el.checked = checked; el.addEventListener('change', () => onchange(el.checked)); return el; };
-  const seg = h('div', { class: 'seg' });
-  const paintSeg = () => seg.replaceChildren(...['docx', 'txt'].map(f => h('button', { class: settings.format === f ? 'on' : '', onclick: () => { settings.format = f; saveSettings(); paintSeg(); } }, f)));
-  paintSeg();
   const intro = h('textarea', { rows: '3', placeholder: '留空就不加说明' });
   intro.value = settings.header.intro;
   intro.addEventListener('input', () => { settings.header.intro = normalizeNL(intro.value); saveSettings(); });
-  const tSw = sw(settings.header.title, v => { settings.header.title = v; saveSettings(); });
-  const cSw = sw(settings.header.toc, v => { settings.header.toc = v; saveSettings(); });
-  openPage('合并设置', api => {
-    api.beforeClose = () => {
-      if (markerLine(settings.header.intro)) { toast('说明文字里有一行和分隔行一样，请改一下', true); return false; }
-      return true;
-    };
-    return {
-      body: h('div', { class: 'page-body' },
-        h('div', { class: 'group-title' }, '输出'),
-        h('div', { class: 'group' },
-          h('div', { class: 'cell' }, h('span', { class: 'label' }, '文件格式'), seg),
-          h('label', { class: 'cell' }, h('span', { class: 'label' }, '合并后记录到目录'), sw(settings.save, v => { settings.save = v; saveSettings(); }))),
-        h('div', { class: 'group-title' }, '合并文件的开头'),
-        h('div', { class: 'group' },
-          h('label', { class: 'cell' }, h('span', { class: 'label' }, '标题和文件数'), tSw),
-          h('label', { class: 'cell' }, h('span', { class: 'label' }, '文件目录'), cSw),
-          h('div', { class: 'cell col' }, h('span', { class: 'label' }, '说明文字'), intro),
-          h('button', { class: 'cell sheet-item', onclick: () => {
-            settings.header = { ...DEFAULT_HEADER }; saveSettings();
-            tSw.checked = cSw.checked = true; intro.value = DEFAULT_INTRO; toast('已恢复默认');
-          } }, icon('undo'), '恢复默认')),
-        h('div', { class: 'group-note' }, '全部关掉的话，合并文件会直接从第一个文档开始。每个文档前后的分隔行一直都会有，拆分要靠它。')),
-    };
-  });
+  const hdSw = key => sw(settings.header[key] !== false, v => { settings.header[key] = v; saveSettings(); });
+  const switches = { title: hdSw('title'), declare: hdSw('declare'), toc: hdSw('toc') };
+  openPage('合并设置', () => ({
+    body: h('div', { class: 'page-body' },
+      h('div', { class: 'group-title' }, '拆分词'),
+      h('div', { class: 'group' }, h('div', { class: 'cell col' },
+        markerInput(settings.marker, m => { if (m) { settings.marker = m; saveSettings(); } }),
+        h('div', {}, ibtn('', 'copy', '复制拆分词', { onclick: () => copyMarker(settings.marker) })))),
+      h('div', { class: 'group-note' }, '每个文件开头会有一行拆分词，导回来时靠它拆开。分享合并文件时，把拆分词一起发给对方。'),
+      h('div', { class: 'group-title' }, '输出'),
+      h('div', { class: 'group' },
+        h('div', { class: 'cell' }, h('span', { class: 'label' }, '文件格式'), segCtl([['docx', 'docx'], ['txt', 'txt']], settings.format, v => { settings.format = v; saveSettings(); })),
+        h('label', { class: 'cell' }, h('span', { class: 'label' }, '合并后记录到目录'), sw(settings.save, v => { settings.save = v; saveSettings(); }))),
+      h('div', { class: 'group-title' }, '合并文件的开头'),
+      h('div', { class: 'group' },
+        h('label', { class: 'cell' }, h('span', { class: 'label' }, '标题和文件数'), switches.title),
+        h('label', { class: 'cell' }, h('span', { class: 'label' }, '写明拆分词（导回时自动认出来）'), switches.declare),
+        h('label', { class: 'cell' }, h('span', { class: 'label' }, '文件目录（带批注）'), switches.toc),
+        h('div', { class: 'cell col' }, h('span', { class: 'label' }, '说明文字'), intro),
+        h('button', { class: 'cell sheet-item', onclick: () => {
+          settings.header = { ...DEFAULT_HEADER }; saveSettings();
+          for (const k in switches) switches[k].checked = true;
+          intro.value = DEFAULT_INTRO; toast('已恢复默认');
+        } }, icon('undo'), '恢复默认')),
+      h('div', { class: 'group-note' }, '全部关掉的话，合并文件会直接从第一个文档开始。关掉「写明拆分词」后，对方导入时需要手动输入拆分词。')),
+  }));
 }
 
 function addMenu(anchor) {
@@ -1407,27 +1635,74 @@ function renderSplit() {
   $('#splitList').replaceChildren(...splitRecs.map(r => recRow(r, { refresh: renderSplit })));
 }
 
+async function importSplit(fileName, parsed) {
+  const rec = { id: uid(), kind: 'split', title: parsed.title || stripExt(fileName), sourceName: fileName, marker: parsed.marker, note: '', createdAt: Date.now(), files: parsed.files };
+  if (settings.splitSave) { await DB.put(rec); recSaved.add(rec.id); }
+  rememberMarker(parsed.marker);
+  splitRecs.unshift(rec);
+  renderSplit(); refreshCatalog();
+  toast(`拆出 ${parsed.files.length} 个文件`);
+  return rec;
+}
+
+// 没认出拆分词（或者是猜的）时，让用户确认 / 输入作者给的拆分词
+function openSplitPage(fileName, text, parsed) {
+  let cur = parsed;
+  const status = h('div', { class: 'mk-hint' });
+  const list = h('ul', { class: 'list' });
+  const okBtn = ibtn('primary', 'scissors', '确定拆分', {});
+  const paint = () => {
+    const n = cur.files.length;
+    status.textContent = n
+      ? `能拆出 ${n} 个文件` + (cur.sure ? '' : '（拆分词是猜的，请看看下面的文件名对不对）')
+      : '没认出拆分词。请输入作者给的拆分词，把「拆分词：xxx」整句粘贴进来也可以。';
+    status.classList.toggle('err-text', !n);
+    okBtn.disabled = !n;
+    list.replaceChildren(...cur.files.slice(0, 300).map((f, i) => listRow({
+      avatar: fileAvatar(typeOf(f.name)), title: f.name, sub: fileSub(f), right: [h('span', {}, i + 1)],
+    })));
+  };
+  openPage('拆分', api => {
+    okBtn.addEventListener('click', run(async () => {
+      const rec = await importSplit(fileName, cur);
+      api.close(true);
+      openRecord(rec, { onChange: renderSplit });
+    }));
+    return {
+      body: h('div', { class: 'page-body' },
+        h('div', { class: 'summary' }, fileAvatar(typeOf(fileName)),
+          h('div', { class: 'row-main' }, h('div', { class: 's-title' }, fileName), h('div', { class: 's-sub' }, fmtChars(text.length)))),
+        h('div', { class: 'group-title' }, '拆分词'),
+        h('div', { class: 'group' }, h('div', { class: 'cell col' },
+          markerInput(parsed.marker || '', m => { cur = m ? { ...parseMerged(text, m), sure: true } : { files: [], marker: null }; paint(); }, { debounce: 250 }),
+          status)),
+        h('div', { class: 'group-title' }, '拆出来的文件'),
+        list),
+      foot: h('div', { class: 'page-foot' }, okBtn),
+    };
+  });
+  paint();
+}
+
 async function handleSplitFiles(fileList) {
   const files = [...fileList];
-  let last = null;
   for (const f of files) {
+    let text;
     try {
       const buf = await f.arrayBuffer();
-      const text = extOf(f.name) === 'docx' ? await docxToText(buf) : decodeText(new Uint8Array(buf));
-      const parsed = parseMerged(text);
-      if (!parsed.files.length) { toast(`「${f.name}」里没找到分隔行，可能不是用本工具合并的`, true); continue; }
-      const rec = { id: uid(), kind: 'split', title: stripExt(f.name), sourceName: f.name, createdAt: Date.now(), files: parsed.files };
-      if (loadSplitSave()) { await DB.put(rec); recSaved.add(rec.id); }
-      splitRecs.unshift(rec); last = rec;
-      toast(`拆出 ${parsed.files.length} 个文件`);
+      text = extOf(f.name) === 'docx' ? await docxToText(buf) : decodeText(new Uint8Array(buf));
     } catch (e) {
-      console.error(e); toast(`「${f.name}」读取失败：${e.message || e}`, true);
+      console.error(e); toast(`「${f.name}」读取失败：${e.message || e}`, true); continue;
+    }
+    const parsed = parseMerged(text, null, markerCandidates());
+    if (parsed.sure && parsed.files.length) {
+      const rec = await importSplit(f.name, parsed);
+      if (files.length === 1) openRecord(rec, { onChange: renderSplit });
+    } else {
+      openSplitPage(f.name, text, parsed);
     }
   }
-  renderSplit(); refreshCatalog();
-  if (last && files.length === 1) openRecord(last, { onChange: renderSplit });
 }
-const loadSplitSave = () => { try { return localStorage.getItem('dms-split-save') !== '0'; } catch { return true; } };
 
 // ---------- 目录 ----------
 let catKind = 'all';
@@ -1439,7 +1714,7 @@ async function refreshCatalog() {
   $('#catCount').textContent = recs.length || '';
   const q = $('#catSearch').value.trim().toLowerCase();
   const shown = recs.filter(r => (catKind === 'all' || r.kind === catKind) && (!q ||
-    r.title.toLowerCase().includes(q) || r.files.some(f => f.name.toLowerCase().includes(q) || f.text.toLowerCase().includes(q))));
+    [r.title, r.note, ...r.files.flatMap(f => [f.name, f.note, f.text])].some(t => (t || '').toLowerCase().includes(q))));
   $('#catList').replaceChildren(...shown.map(r => recRow(r, { query: q, refresh: refreshCatalog })));
   const empty = $('#catEmpty');
   empty.textContent = recs.length ? '没有找到' : '还没有记录。合并或导入拆分后会出现在这里。';
@@ -1527,14 +1802,7 @@ function switchTab(name) {
   closeSwipe();
   const acts = $('#appbarActions');
   if (name === 'merge') acts.replaceChildren(h('button', { class: 'iconbtn', title: '添加', 'aria-label': '添加', onclick: e => addMenu(e.currentTarget) }, icon('plusCircle')));
-  if (name === 'split') acts.replaceChildren(h('button', { class: 'iconbtn', title: '导入文件', 'aria-label': '导入文件', onclick: () => $('#splitInput').click() }, icon('plusCircle')),
-    h('button', { class: 'iconbtn', title: '设置', 'aria-label': '设置', onclick: e => {
-      const on = loadSplitSave();
-      menuAt(e.currentTarget, [{ icon: on ? 'check' : 'x', label: on ? '导入后记录到目录：开' : '导入后记录到目录：关', run: () => {
-        try { localStorage.setItem('dms-split-save', on ? '0' : '1'); } catch {}
-        toast(on ? '以后导入不自动记录' : '以后导入会自动记录');
-      } }]);
-    } }, icon('settings')));
+  if (name === 'split') acts.replaceChildren(h('button', { class: 'iconbtn', title: '导入文件', 'aria-label': '导入文件', onclick: () => $('#splitInput').click() }, icon('plusCircle')));
   if (name === 'catalog') acts.replaceChildren(h('button', { class: 'iconbtn', title: '更多', 'aria-label': '更多', onclick: e => menuAt(e.currentTarget, [
     { icon: 'download', label: '导出备份', run: exportCatalog },
     { icon: 'upload', label: '导入备份', run: () => $('#importCatInput').click() },
@@ -1544,30 +1812,31 @@ function switchTab(name) {
       await DB.clear(); recSaved.clear(); refreshCatalog(); toast('目录已清空');
     } },
   ]) }, icon('more')));
+  acts.append(h('button', { class: 'iconbtn', title: '设置', 'aria-label': '设置', onclick: openAppSettings }, icon('settings')));
   try { localStorage.setItem('dms-tab', name); } catch {}
   if (name === 'catalog') refreshCatalog();
 }
 
+// 外观：'' 跟随系统，'light' 浅色，'dark' 深色
+const themeMq = matchMedia('(prefers-color-scheme: dark)');
+const themePref = () => document.documentElement.dataset.theme || '';
+const isDark = () => themePref() ? themePref() === 'dark' : themeMq.matches;
+function paintThemeBtn() {
+  const btn = $('#themeBtn'), dark = isDark();
+  btn.replaceChildren(icon(dark ? 'sun' : 'moon'));
+  btn.title = dark ? '切换到浅色模式' : '切换到深夜模式';
+  btn.setAttribute('aria-label', btn.title);
+}
+function setTheme(t) {
+  if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+  try { if (t) localStorage.setItem('dms-theme', t); else localStorage.removeItem('dms-theme'); } catch {}
+  paintThemeBtn();
+}
 function setupTheme() {
-  const root = document.documentElement;
-  const mq = matchMedia('(prefers-color-scheme: dark)');
-  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : mq.matches;
-  const btn = $('#themeBtn');
-  const paint = () => {
-    const dark = isDark();
-    btn.replaceChildren(icon(dark ? 'sun' : 'moon'));
-    btn.title = dark ? '切换到浅色模式' : '切换到深夜模式';
-    btn.setAttribute('aria-label', btn.title);
-  };
-  try { const t = localStorage.getItem('dms-theme'); if (t) root.dataset.theme = t; } catch {}
-  btn.addEventListener('click', () => {
-    const t = isDark() ? 'light' : 'dark';
-    root.dataset.theme = t;
-    try { localStorage.setItem('dms-theme', t); } catch {}
-    paint();
-  });
-  mq.addEventListener('change', paint);
-  paint();
+  try { const t = localStorage.getItem('dms-theme'); if (t) document.documentElement.dataset.theme = t; } catch {}
+  $('#themeBtn').addEventListener('click', () => setTheme(isDark() ? 'light' : 'dark'));
+  themeMq.addEventListener('change', paintThemeBtn);
+  paintThemeBtn();
 }
 
 (async function main() {
@@ -1600,6 +1869,7 @@ function setupTheme() {
     document.querySelectorAll('#catFilter .chip').forEach(x => x.classList.toggle('on', x === c));
     refreshCatalog();
   });
+  try { if (localStorage.getItem('dms-split-save') === '0') settings.splitSave = false; } catch {}
   saveSettings();
   renderMerge();
   await DB.init();
