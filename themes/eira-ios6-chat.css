@@ -207,9 +207,9 @@
 .ph-bubble::after {
   content: "";
   position: absolute;
-  bottom: -5px;                 /* 尾尖比气泡底边略低一点，和原版一样 */
-  width: 24px;
-  height: 20px;
+  bottom: -6px;                 /* 尾尖比气泡底边略低一点，和原版一样 */
+  width: 32px;
+  height: 22px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   opacity: 1;
@@ -223,8 +223,8 @@
   border-bottom-right-radius: 0;  /* 尾巴那一角要是直角，尾巴才能接上 */
 }
 .ph-bubble-mine::after {
-  right: -12px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bfe2fd'/%3E%3Cstop offset='1' stop-color='%23cfecfe'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 0H12.5C12.5 8 15 14 22.5 18.8C19 19.5 15 17.5 12.5 15.5H12Z' fill='url(%23g)'/%3E%3Cpath d='M12.5 0C12.5 8 15 14 22.5 18.8C19 19.5 15 17.5 12.5 15.5H6' fill='none' stroke='%23818d9a' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E");
+  right: -18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 22'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23bfe2fd'/%3E%3Cstop offset='1' stop-color='%23cfecfe'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 0H14.5C15 6 21 12.5 30.5 21C26 21.8 19.5 20.5 14.5 16.5H14Z' fill='url(%23g)'/%3E%3Cpath d='M14.5 0C15 6 21 12.5 30.5 21C26 21.8 19.5 20.5 14.5 16.5H6' fill='none' stroke='%23818d9a' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 /* 接收方：同一条尾巴水平翻转到左下 */
@@ -233,9 +233,9 @@
   border-bottom-left-radius: 0;
 }
 .ph-bubble-theirs::after {
-  left: -12px;
+  left: -18px;
   transform: scaleX(-1);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e6e6e8'/%3E%3Cstop offset='1' stop-color='%23efeff1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 0H12.5C12.5 8 15 14 22.5 18.8C19 19.5 15 17.5 12.5 15.5H12Z' fill='url(%23g)'/%3E%3Cpath d='M12.5 0C12.5 8 15 14 22.5 18.8C19 19.5 15 17.5 12.5 15.5H6' fill='none' stroke='%23818d9a' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 22'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e6e6e8'/%3E%3Cstop offset='1' stop-color='%23efeff1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 0H14.5C15 6 21 12.5 30.5 21C26 21.8 19.5 20.5 14.5 16.5H14Z' fill='url(%23g)'/%3E%3Cpath d='M14.5 0C15 6 21 12.5 30.5 21C26 21.8 19.5 20.5 14.5 16.5H6' fill='none' stroke='%23818d9a' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 /* 文字：纯黑加底部白光 */
