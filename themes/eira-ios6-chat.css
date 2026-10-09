@@ -9,12 +9,16 @@
 .ph-screen,
 .ph-page {
   --ph-navbar-h: 44px;          /* iOS 6 标准导航栏高度 */
-  --ph-bubble-r: 22px;          /* 越大越圆 */
-  --ph-bubble-px: 10px;
-  --ph-bubble-py: 2px;
+  --ph-bubble-r: 17px;
+  --ph-bubble-px: 7px;          /* 气泡左右内边距，原来 10px */
+  --ph-bubble-py: 1px;          /* 气泡上下内边距，原来 2px */
   --ph-bubble-gap: 18px;
   --ph-composer-h: 30px;
   --ph-composer-pad: 8px;
+
+  /* ↓↓↓ 气泡尾巴图片：把引号里的地址换成你自己的图片链接 ↓↓↓ */
+  --tail-mine: url("https://img.heliar.top/file/1771606015209_%E6%97%A0%E6%A0%87%E9%A2%984_20260221004634.png");     /* 我发的（右边） */
+  --tail-theirs: url("https://img.heliar.top/file/1771618764754_%E6%97%A0%E6%A0%87%E9%A2%984_20260221041902.png");   /* 对方的（左边） */
 }
 
 
@@ -174,7 +178,6 @@
   box-sizing: border-box;
   min-width: 31px;
   min-height: 20px;
-  border-radius: var(--ph-bubble-r);
   background-color: transparent;
   background-position: center;
   background-size: cover;
@@ -203,39 +206,40 @@
   pointer-events: none;
 }
 
-/* 尾巴装饰图的公共部分：用内联 SVG 直接画，不依赖外链图片 */
+/* 尾巴装饰图的公共部分（图片地址在最上面的变量里填） */
 .ph-bubble::after {
   content: "";
   position: absolute;
-  bottom: -3px;
-  width: 42px;
-  height: 21px;
-  background-size: 100% 100%;
+  bottom: 0;
+  background-size: contain;
   background-repeat: no-repeat;
   opacity: 1;
   z-index: 20;
   pointer-events: none;
 }
 
-/* 发送方：尾巴在右下 */
+/* 发送方 */
 .ph-bubble-mine {
   background-image: linear-gradient(180deg, rgba(151, 198, 252, 1), rgba(207, 236, 254, 1));
-  border-bottom-right-radius: 9px;  /* 尾巴这一角的小圆角，是尾巴下面那道小弯的起点，别改 */
 }
 .ph-bubble-mine::after {
-  right: -18px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 21'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23c3e4fd'/%3E%3Cstop offset='1' stop-color='%23cfecfe'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M24 0H24.5V1.25C24.5 10.25 30.5 15.5 40.25 17.75C34.25 17 27.5 14.15 22.28 15.11A9.5 9.5 0 0 1 15 18.5L15 18A9 9 0 0 0 24 9Z' fill='url(%23g)'/%3E%3Cpath d='M24.5 0V1.25C24.5 10.25 30.5 15.5 40.25 17.75C34.25 17 27.5 14.15 22.28 15.11A9.5 9.5 0 0 1 15 18.5H0' fill='none' stroke='%23818d9a' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E");
+  width: 38px;
+  height: 38px;
+  right: 0;
+  background-image: var(--tail-mine);
+  transform: translate(21.5px, 16.5px) rotate(-4deg);
 }
 
-/* 接收方：同一条尾巴水平翻转到左下 */
+/* 接收方 */
 .ph-bubble-theirs {
   background-image: linear-gradient(180deg, rgba(220, 220, 220, 1), rgba(239, 239, 241, 1));
-  border-bottom-left-radius: 9px;
 }
 .ph-bubble-theirs::after {
-  left: -18px;
-  transform: scaleX(-1);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 21'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e8e8ea'/%3E%3Cstop offset='1' stop-color='%23efeff1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M24 0H24.5V1.25C24.5 10.25 30.5 15.5 40.25 17.75C34.25 17 27.5 14.15 22.28 15.11A9.5 9.5 0 0 1 15 18.5L15 18A9 9 0 0 0 24 9Z' fill='url(%23g)'/%3E%3Cpath d='M24.5 0V1.25C24.5 10.25 30.5 15.5 40.25 17.75C34.25 17 27.5 14.15 22.28 15.11A9.5 9.5 0 0 1 15 18.5H0' fill='none' stroke='%23818d9a' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E");
+  width: 42px;
+  height: 42px;
+  left: 0;
+  background-image: var(--tail-theirs);
+  transform: translate(-19.5px, 22px) rotate(4deg);
 }
 
 /* 文字：纯黑加底部白光 */
