@@ -16,9 +16,21 @@
   --ph-composer-h: 30px;
   --ph-composer-pad: 8px;
 
-  /* ↓↓↓ 气泡尾巴图片：把引号里的地址换成你自己的图片链接 ↓↓↓ */
-  --tail-mine: url("https://img.heliar.top/file/1771606015209_%E6%97%A0%E6%A0%87%E9%A2%984_20260221004634.png");     /* 我发的（右边） */
-  --tail-theirs: url("https://img.heliar.top/file/1771618764754_%E6%97%A0%E6%A0%87%E9%A2%984_20260221041902.png");   /* 对方的（左边） */
+  /* ↓↓↓ 气泡尾巴：图片、大小、位置、旋转都在这里调 ↓↓↓ */
+
+  /* 我发的（右边） */
+  --tail-mine: url("https://img.heliar.top/file/1771606015209_%E6%97%A0%E6%A0%87%E9%A2%984_20260221004634.png");
+  --tail-mine-size: 38px;       /* 大小：越大尾巴越大 */
+  --tail-mine-x: 21.5px;        /* 左右：越大越往右，负数往左 */
+  --tail-mine-y: 16.5px;        /* 上下：越大越往下，负数往上 */
+  --tail-mine-rotate: -4deg;    /* 旋转：正数顺时针，负数逆时针 */
+
+  /* 对方的（左边） */
+  --tail-theirs: url("https://img.heliar.top/file/1771618764754_%E6%97%A0%E6%A0%87%E9%A2%984_20260221041902.png");
+  --tail-theirs-size: 42px;     /* 大小：越大尾巴越大 */
+  --tail-theirs-x: -19.5px;     /* 左右：越大越往右，负数往左 */
+  --tail-theirs-y: 22px;        /* 上下：越大越往下，负数往上 */
+  --tail-theirs-rotate: 4deg;   /* 旋转：正数顺时针，负数逆时针 */
 }
 
 
@@ -206,7 +218,7 @@
   pointer-events: none;
 }
 
-/* 尾巴装饰图的公共部分（图片地址在最上面的变量里填） */
+/* 尾巴装饰图的公共部分（图片、大小、位置、旋转都在最上面的变量里调） */
 .ph-bubble::after {
   content: "";
   position: absolute;
@@ -223,11 +235,11 @@
   background-image: linear-gradient(180deg, rgba(151, 198, 252, 1), rgba(207, 236, 254, 1));
 }
 .ph-bubble-mine::after {
-  width: 38px;
-  height: 38px;
+  width: var(--tail-mine-size);
+  height: var(--tail-mine-size);
   right: 0;
   background-image: var(--tail-mine);
-  transform: translate(21.5px, 16.5px) rotate(-4deg);
+  transform: translate(var(--tail-mine-x), var(--tail-mine-y)) rotate(var(--tail-mine-rotate));
 }
 
 /* 接收方 */
@@ -235,11 +247,11 @@
   background-image: linear-gradient(180deg, rgba(220, 220, 220, 1), rgba(239, 239, 241, 1));
 }
 .ph-bubble-theirs::after {
-  width: 42px;
-  height: 42px;
+  width: var(--tail-theirs-size);
+  height: var(--tail-theirs-size);
   left: 0;
   background-image: var(--tail-theirs);
-  transform: translate(-19.5px, 22px) rotate(4deg);
+  transform: translate(var(--tail-theirs-x), var(--tail-theirs-y)) rotate(var(--tail-theirs-rotate));
 }
 
 /* 文字：纯黑加底部白光 */
