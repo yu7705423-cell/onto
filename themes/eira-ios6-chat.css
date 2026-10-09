@@ -20,14 +20,14 @@
 
   /* 我发的（右边） */
   --tail-mine: url("https://img.heliar.top/file/1771606015209_%E6%97%A0%E6%A0%87%E9%A2%984_20260221004634.png");
-  --tail-mine-size: 38px;       /* 大小：越大尾巴越大 */
+  --tail-mine-scale: 1;         /* 大小：1 是原大，0.5 缩小一半，2 放大一倍 */
   --tail-mine-x: 21.5px;        /* 左右：越大越往右，负数往左 */
   --tail-mine-y: 16.5px;        /* 上下：越大越往下，负数往上 */
   --tail-mine-rotate: -4deg;    /* 旋转：正数顺时针，负数逆时针 */
 
   /* 对方的（左边） */
   --tail-theirs: url("https://img.heliar.top/file/1771618764754_%E6%97%A0%E6%A0%87%E9%A2%984_20260221041902.png");
-  --tail-theirs-size: 42px;     /* 大小：越大尾巴越大 */
+  --tail-theirs-scale: 1;       /* 大小：1 是原大，0.5 缩小一半，2 放大一倍 */
   --tail-theirs-x: -19.5px;     /* 左右：越大越往右，负数往左 */
   --tail-theirs-y: 22px;        /* 上下：越大越往下，负数往上 */
   --tail-theirs-rotate: 4deg;   /* 旋转：正数顺时针，负数逆时针 */
@@ -223,7 +223,12 @@
   content: "";
   position: absolute;
   bottom: 0;
-  background-size: contain;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+  background-size: contain !important;
+  background-position: center;
   background-repeat: no-repeat;
   opacity: 1;
   z-index: 20;
@@ -235,11 +240,11 @@
   background-image: linear-gradient(180deg, rgba(151, 198, 252, 1), rgba(207, 236, 254, 1));
 }
 .ph-bubble-mine::after {
-  width: var(--tail-mine-size);
-  height: var(--tail-mine-size);
+  width: 38px !important;
+  height: 38px !important;
   right: 0;
   background-image: var(--tail-mine);
-  transform: translate(var(--tail-mine-x), var(--tail-mine-y)) rotate(var(--tail-mine-rotate));
+  transform: translate(var(--tail-mine-x), var(--tail-mine-y)) rotate(var(--tail-mine-rotate)) scale(var(--tail-mine-scale)) !important;
 }
 
 /* 接收方 */
@@ -247,11 +252,11 @@
   background-image: linear-gradient(180deg, rgba(220, 220, 220, 1), rgba(239, 239, 241, 1));
 }
 .ph-bubble-theirs::after {
-  width: var(--tail-theirs-size);
-  height: var(--tail-theirs-size);
+  width: 42px !important;
+  height: 42px !important;
   left: 0;
   background-image: var(--tail-theirs);
-  transform: translate(var(--tail-theirs-x), var(--tail-theirs-y)) rotate(var(--tail-theirs-rotate));
+  transform: translate(var(--tail-theirs-x), var(--tail-theirs-y)) rotate(var(--tail-theirs-rotate)) scale(var(--tail-theirs-scale)) !important;
 }
 
 /* 文字：纯黑加底部白光 */
